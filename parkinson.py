@@ -81,4 +81,5 @@ def predict_parkinsons():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8082)  # Run on port 8082
+    port = int(os.environ.get('PORT', 80802))  
+    app.run(debug=True, host='0.0.0.0', port=port) 
