@@ -66,18 +66,13 @@ def predict_parkinsons():
 
  
         input_array = np.array(input_values).reshape(1, -1)
-        print("Input Array for Model:", input_array)
+
 
 
         prediction = parkinsons_model.predict(input_array)
-        print("Model Prediction:", prediction)
+       
 
-     
-        result = (
-            "The person is likely to have Parkinson's disease."
-            if prediction[0] == 1
-            else "The person is not likely to have Parkinson's disease."
-        )
+        result = "The person is likely to have Parkinson's disease." if prediction[0] == 1 else "The person is not likely to have Parkinson's disease."
         return jsonify({'diagnosis': result})
 
     except Exception as e:
@@ -86,4 +81,4 @@ def predict_parkinsons():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8082)  
+    app.run(debug=True, port=8082)  # Run on port 8082

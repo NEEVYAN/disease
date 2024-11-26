@@ -103,8 +103,6 @@ def app():
 
 
                 input_array = np.array(user_input).reshape(1, -1)
-
-   
                 kidney_prediction = kidney_model.predict(input_array)
 
 

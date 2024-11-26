@@ -66,7 +66,7 @@ def heart_prediction():
         print("Model Prediction:", prediction)
 
         # Format the result
-        result = "The person is having heart disease" if prediction[0] == 1 else "The person does not have heart disease"
+        result = "The person does not have heart disease" if prediction[0] == 1 else "The person is having heart disease"
         return jsonify({'diagnosis': result})
 
     except Exception as e:

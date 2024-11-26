@@ -64,9 +64,6 @@ def api_ml():
         print(f"Error: {e}")
         return jsonify({'error': f'An error occurred: {e}'}), 500
 
-
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
-
-
-#https://stazy.live/diabetes
+    port = int(os.environ.get('PORT', 8080))  
+    app.run(debug=True, host='0.0.0.0', port=port) 
